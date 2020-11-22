@@ -1,0 +1,20 @@
+CREATE TABLE public."Inspections"
+(
+    "Inspection_ID" integer NOT NULL,
+    "Permit_ID" integer NOT NULL,
+    "Date" date,
+    "Time" text COLLATE pg_catalog."default" NOT NULL,
+    "Inspection_Type" text COLLATE pg_catalog."default",
+    "Critical_Violations" integer,
+    "Non_Critical_Violations" integer,
+    "Critical_Violations_Corrected_On_Site" integer,
+    "Critical_Violations_To_Be_Resolved" integer,
+    "Non_Critical_Violations_Corrected_On_Site" integer,
+    "Non_Critical_Violations_To_Be_Resolved" integer,
+    CONSTRAINT "Inspections_pkey" PRIMARY KEY ("Inspection_ID", "Permit_ID", "Time")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."Inspections"
+    OWNER to postgres;

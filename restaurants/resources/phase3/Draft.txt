@@ -1,0 +1,11 @@
+CREATE TABLE public."Draft"
+(
+    "Permit_ID" integer NOT NULL,
+    "Yelp_ID" text COLLATE pg_catalog."default",
+    CONSTRAINT "Draft_pkey" PRIMARY KEY ("Permit_ID")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."Draft"
+    OWNER to postgres;

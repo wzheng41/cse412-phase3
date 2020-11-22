@@ -1,0 +1,12 @@
+CREATE TABLE public."Violations"
+(
+    "Inspection_ID" integer NOT NULL,
+    "Violation_Number" integer NOT NULL,
+    "Violation_Text" text COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "Violations_pkey" PRIMARY KEY ("Inspection_ID", "Violation_Number", "Violation_Text")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."Violations"
+    OWNER to postgres;

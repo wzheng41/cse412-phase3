@@ -1,0 +1,76 @@
+# This is an auto-generated Django model module.
+# You'll have to do the following manually to clean this up:
+#   * Rearrange models' order
+#   * Make sure each model has one field with primary_key=True
+#   * Make sure each ForeignKey and OneToOneField has `on_delete` set to the desired behavior
+#   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
+# Feel free to rename the models, but don't rename db_table values or field names.
+from django.db import models
+
+
+class Draft(models.Model):
+    permit_id = models.IntegerField(db_column='Permit_id', blank=True, null=True)  # Field name made lowercase.
+    yelp_id = models.CharField(db_column='Yelp_id', max_length=200, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'draft'
+
+
+class Inspections(models.Model):
+    inspection = models.IntegerField(db_column='Inspection', blank=True, null=True)  # Field name made lowercase.
+    permit_id = models.IntegerField(db_column='Permit_ID', blank=True, null=True)  # Field name made lowercase.
+    date = models.CharField(db_column='Date', max_length=200, blank=True, null=True)  # Field name made lowercase.
+    time = models.CharField(db_column='TIME', max_length=200, blank=True, null=True)  # Field name made lowercase.
+    inspection_type = models.CharField(db_column='Inspection_Type', max_length=200, blank=True, null=True)  # Field name made lowercase.
+    critical_violations = models.IntegerField(db_column='Critical_Violations', blank=True, null=True)  # Field name made lowercase.
+    non_critical_violations = models.IntegerField(db_column='Non_Critical_Violations', blank=True, null=True)  # Field name made lowercase.
+    critical_violations_corrected_on_site = models.IntegerField(db_column='Critical_Violations_Corrected_On_Site', blank=True, null=True)  # Field name made lowercase.
+    critical_violations_to_be_resolved = models.IntegerField(db_column='Critical_Violations_To_Be_Resolved', blank=True, null=True)  # Field name made lowercase.
+    non_critical_violations_corrected_on_site = models.IntegerField(db_column='Non_Critical_Violations_Corrected_On_Site', blank=True, null=True)  # Field name made lowercase.
+    non_critical_violations_to_be_resolved = models.IntegerField(db_column='Non_Critical_Violations_To_Be_Resolved', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'inspections'
+
+
+class Opentable(models.Model):
+    permit_id = models.IntegerField(db_column='Permit_ID', blank=True, null=True)  # Field name made lowercase.
+    opentableid = models.IntegerField(db_column='OpenTableID', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'opentable'
+
+
+class Restaurants(models.Model):
+    permit_id = models.IntegerField(db_column='Permit_ID', blank=True, null=True)  # Field name made lowercase.
+    name = models.CharField(db_column='Name', max_length=200, blank=True, null=True)  # Field name made lowercase.
+    address = models.CharField(db_column='Address', max_length=2000, blank=True, null=True)  # Field name made lowercase.
+    lattitude = models.FloatField(db_column='Lattitude', blank=True, null=True)  # Field name made lowercase.
+    longitude = models.FloatField(db_column='Longitude', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'restaurants'
+
+
+class Violationcodeskey(models.Model):
+    violation_number = models.IntegerField(db_column='Violation_Number', blank=True, null=True)  # Field name made lowercase.
+    violation_description = models.CharField(db_column='Violation_Description', max_length=200, blank=True, null=True)  # Field name made lowercase.
+    violation_category = models.CharField(db_column='Violation_Category', max_length=200, blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'violationcodeskey'
+
+
+class Violations(models.Model):
+    inspection_id = models.IntegerField(db_column='Inspection_ID', blank=True, null=True)  # Field name made lowercase.
+    violation_number = models.IntegerField(db_column='Violation_Number', blank=True, null=True)  # Field name made lowercase.
+    violation_text = models.TextField(db_column='Violation_Text', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False
+        db_table = 'violations'

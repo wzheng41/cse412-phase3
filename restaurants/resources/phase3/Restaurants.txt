@@ -1,0 +1,14 @@
+CREATE TABLE public."Restaurants"
+(
+    "Permit_ID" integer NOT NULL,
+    "Name" text COLLATE pg_catalog."default",
+    "Address" text COLLATE pg_catalog."default",
+    "Lattitude" numeric,
+    "Longitude" numeric,
+    CONSTRAINT "Restaurants_pkey" PRIMARY KEY ("Permit_ID")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."Restaurants"
+    OWNER to postgres;

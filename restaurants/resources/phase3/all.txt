@@ -1,0 +1,75 @@
+CREATE TABLE public."Draft"
+(
+    "Permit_ID" integer NOT NULL,
+    "Yelp_ID" text COLLATE pg_catalog."default",
+    CONSTRAINT "Draft_pkey" PRIMARY KEY ("Permit_ID")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."Draft"
+    OWNER to postgres;CREATE TABLE public."Inspections"
+(
+    "Inspection_ID" integer NOT NULL,
+    "Permit_ID" integer NOT NULL,
+    "Date" date,
+    "Time" text COLLATE pg_catalog."default" NOT NULL,
+    "Inspection_Type" text COLLATE pg_catalog."default",
+    "Critical_Violations" integer,
+    "Non_Critical_Violations" integer,
+    "Critical_Violations_Corrected_On_Site" integer,
+    "Critical_Violations_To_Be_Resolved" integer,
+    "Non_Critical_Violations_Corrected_On_Site" integer,
+    "Non_Critical_Violations_To_Be_Resolved" integer,
+    CONSTRAINT "Inspections_pkey" PRIMARY KEY ("Inspection_ID", "Permit_ID", "Time")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."Inspections"
+    OWNER to postgres;CREATE TABLE public."OpenTable"
+(
+    "Permit_ID" integer NOT NULL,
+    "OpenTableID" integer,
+    CONSTRAINT "OpenTable_pkey" PRIMARY KEY ("Permit_ID")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."OpenTable"
+    OWNER to postgres;CREATE TABLE public."Restaurants"
+(
+    "Permit_ID" integer NOT NULL,
+    "Name" text COLLATE pg_catalog."default",
+    "Address" text COLLATE pg_catalog."default",
+    "Lattitude" numeric,
+    "Longitude" numeric,
+    CONSTRAINT "Restaurants_pkey" PRIMARY KEY ("Permit_ID")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."Restaurants"
+    OWNER to postgres;CREATE TABLE public."ViolationCodesKey"
+(
+    "Violation_Number" integer NOT NULL,
+    "Violation_Description" text COLLATE pg_catalog."default",
+    "Violation_Category" text COLLATE pg_catalog."default",
+    CONSTRAINT "Violation Codes Key_pkey" PRIMARY KEY ("Violation_Number")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."ViolationCodesKey"
+    OWNER to postgres;CREATE TABLE public."Violations"
+(
+    "Inspection_ID" integer NOT NULL,
+    "Violation_Number" integer NOT NULL,
+    "Violation_Text" text COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT "Violations_pkey" PRIMARY KEY ("Inspection_ID", "Violation_Number", "Violation_Text")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."Violations"
+    OWNER to postgres;

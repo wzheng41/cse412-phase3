@@ -1,0 +1,11 @@
+CREATE TABLE public."OpenTable"
+(
+    "Permit_ID" integer NOT NULL,
+    "OpenTableID" integer,
+    CONSTRAINT "OpenTable_pkey" PRIMARY KEY ("Permit_ID")
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public."OpenTable"
+    OWNER to Zpostgres;
