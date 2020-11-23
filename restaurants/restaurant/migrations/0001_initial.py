@@ -12,7 +12,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Draft',
+            name='Draft',               #create Draft table model
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('permit_id', models.IntegerField(blank=True, db_column='Permit_id', null=True)),
@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='Inspections',
+            name='Inspections',         #create Inspections table model
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('inspection', models.IntegerField(blank=True, db_column='Inspection', null=True)),
@@ -45,7 +45,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='Opentable',
+            name='Opentable',           #create Opentable table model
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('permit_id', models.IntegerField(blank=True, db_column='Permit_ID', null=True)),
@@ -57,7 +57,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='Restaurants',
+            name='Restaurants',            #create Restaurants table model
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('permit_id', models.IntegerField(blank=True, db_column='Permit_ID', null=True)),
@@ -72,7 +72,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='Violationcodeskey',
+            name='Violationcodeskey',              #create Violationcodeskey table model
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('violation_number', models.IntegerField(blank=True, db_column='Violation_Number', null=True)),
@@ -85,7 +85,7 @@ class Migration(migrations.Migration):
             },
         ),
         migrations.CreateModel(
-            name='Violations',
+            name='Violations',                    #create Violations table model
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('inspection_id', models.IntegerField(blank=True, db_column='Inspection_ID', null=True)),
