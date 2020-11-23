@@ -31,7 +31,7 @@ class InspectionsAdmin(admin.ModelAdmin):
 
 @admin.register(models.Opentable)
 class OpentableAdmin(admin.ModelAdmin):
-    list_display = ('permit_id','opentableid') # show column
+    list_display = ('permit_id','opentableid') # show permit_id, opentableid column
     list_display_links = ('permit_id',) #
     search_fields = ('permit_id', 'opentableid')
     list_per_page = 50
@@ -41,7 +41,7 @@ class OpentableAdmin(admin.ModelAdmin):
 
 @admin.register(models.Restaurants)
 class RestaurantsAdmin(admin.ModelAdmin):
-    list_display = ('permit_id','name','address','lattitude','longitude',) # show column
+    list_display = ('permit_id','name','address','lattitude','longitude',) # show 'permit_id','name','address','lattitude','longitude' column
     list_display_links = ('permit_id',) #
     search_fields = ('permit_id', 'name')
     list_per_page = 50
@@ -51,7 +51,7 @@ class RestaurantsAdmin(admin.ModelAdmin):
 
 @admin.register(models.Violationcodeskey)
 class ViolationcodeskeyAdmin(admin.ModelAdmin):
-    list_display = ('violation_number','violation_description','violation_category',) # show column
+    list_display = ('violation_number','violation_description','violation_category',) # show 'violation_number','violation_description','violation_category' column
     list_display_links = ('violation_number',) #
     search_fields = ('violation_number', 'violation_category')
     list_per_page = 50
@@ -60,7 +60,7 @@ class ViolationcodeskeyAdmin(admin.ModelAdmin):
 
 @admin.register(models.Violations)
 class ViolationsAdmin(admin.ModelAdmin):
-    list_display = ('inspection_id','violation_number','violation_text',) # show column
+    list_display = ('inspection_id','violation_number','violation_text',) # show inspection_id','violation_number','violation_text' column
     list_display_links = ('inspection_id',) #
     search_fields = ('inspection_id', 'violation_number')
     list_per_page = 50
