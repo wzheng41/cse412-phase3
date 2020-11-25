@@ -23,3 +23,8 @@
    ![image](https://github.com/wzheng41/cse412-phase3/blob/main/phase3%20picture/main%20page.png)
 4.Maintainser:
    --Wenzhe Zheng
+   --Ruijun Yang
+   --Tianyi Liang
+   --Zichang Wang
+   --Yuxuan Hu
+   --Haoyuan Zhong
